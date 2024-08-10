@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 import { cookieToInitialState } from "wagmi";
 import { config } from "./config/index";
-import Web3ModalProvider from "./config/index";
+import Web3ModalProvider from "./context/index";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -42,6 +42,17 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 # Contracts
 
-# Drag and Drop
+# Barter UI
+
+A fully responsive, seemless Barter interface including drag and drop support for an intuitive experience
 
 # View offered trades
+
+# OrbitDB
+A p2p database
+Being used to store user's NFTs in a local Database/IPFS node.
+These databases are also used to propogate the NFT contracts stored by a given wallet to allow trading of NFTs outside major markets like OpenSea and Rarible
+
+## Concessions
+
+Currently using a serverless function in Next.js instead of Chainlink functions to access apis (1inch NFT API)
