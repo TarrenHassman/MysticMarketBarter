@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "@chainsafe/libp2p-gossipsub": "^13.1.0",
     "@orbitdb/core": "^2.2.0",
