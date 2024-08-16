@@ -62,7 +62,7 @@ export default function Home() {
               position: "absolute",
             }}
           >
-            <GroupSidebar></GroupSidebar>
+            {/* <GroupSidebar></GroupSidebar> */}
           </div>
           <div
             style={{
