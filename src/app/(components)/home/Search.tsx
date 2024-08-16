@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import searchIcon from "../../../../public/magnifying-glass.png"
 import Image from "next/image";
 import styles from "../styles/search.module.css"
@@ -6,19 +6,19 @@ import { motion } from "framer-motion";
 import { useEnsName, useEnsResolver } from "wagmi";
 import Person from "./Person";
 export default function Search() {
-  const useEnsFinder= (value)=>{
-    const address= useEnsResolver({
-      name:value
-    })
-    console.log(address)
-  }
+  // const [value, setValue] = useState("");
+  // useEffect(()=>{
+  //   const address= useEnsResolver({
+  //     name:value
+  //   })
+  // })
 
   return (
     <motion.div className={styles.search}>
      
       <input 
       onChange={(value)=>{
-        useEnsFinder(value.currentTarget.value)
+        
         console.log("iahsdk;fj")
       }}
       className={styles.searchInput}
