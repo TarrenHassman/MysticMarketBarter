@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useEnsName, useEnsResolver } from "wagmi";
 import Person from "./Person";
 export default function Search() {
-  const findUser= (value)=>{
+  const useEnsFinder= (value)=>{
     const address= useEnsResolver({
       name:value
     })
@@ -18,7 +18,7 @@ export default function Search() {
      
       <input 
       onChange={(value)=>{
-        findUser(value.currentTarget.value)
+        useEnsFinder(value.currentTarget.value)
         console.log("iahsdk;fj")
       }}
       className={styles.searchInput}
