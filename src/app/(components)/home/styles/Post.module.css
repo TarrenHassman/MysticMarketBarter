@@ -1,0 +1,18 @@
+.post{
+    z-index: -2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: calc(95vw - 350px) !important;
+    height: 98vh;
+    border-color: black;
+    border-width: 2px;
+}
+
+.person{
+    z-index: -1;
+    position: absolute;
+    bottom: -16px;
+    left: -95px;
+}

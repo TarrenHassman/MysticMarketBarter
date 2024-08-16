@@ -1,28 +1,32 @@
-import "./globals.css";
-import { headers } from "next/headers";
-import { Inter } from "next/font/google";
-import { cookieToInitialState } from "wagmi";
-import { config } from "./config/index";
-import Web3ModalProvider from "./context/index";
+import './globals.css'
+import { headers } from 'next/headers'
 
-const inter = Inter({ subsets: ["latin"] });
+import { cookieToInitialState } from 'wagmi'
+
+import { config } from './config/index'
+import AppKitProvider from './context/index'
+
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "AppKit Example App",
-  description: "AppKit by WalletConnect"
+  title: 'MysticMarket',
+  description: 'Demo of NFT Barter System and Propogation of User NFT collections',
 };
 
 /**
  * @typedef {React.ReactNode} NewType
  */
 
-export default function RootLayout({ children }) {
-  const initialState = cookieToInitialState(config, headers().get("cookie"));
+export default function RootLayout({
+  children
+}){
+  const initialState = cookieToInitialState(config, headers().get('cookie'))
+  
   return (
     <html lang="en">
       <body>
-        <Web3ModalProvider initialState={initialState}>{children}</Web3ModalProvider>
+        <AppKitProvider initialState={initialState}>{children}</AppKitProvider>
       </body>
     </html>
-  );
+  )
 }

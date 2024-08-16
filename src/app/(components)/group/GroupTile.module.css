@@ -1,0 +1,8 @@
+.groupTile {
+    z-index: -1;
+    width: 45%;
+    height: 100px;
+    border-color: black;
+    border-radius: 20px;
+    border-width: 2px;
+}

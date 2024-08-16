@@ -1,0 +1,6 @@
+.undented {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  box-shadow:  5px 5px 10px #33015a,
+               -5px -5px 10px #6901b6;
+}

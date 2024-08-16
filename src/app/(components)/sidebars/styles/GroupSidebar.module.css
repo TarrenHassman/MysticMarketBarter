@@ -1,0 +1,18 @@
+.groupSidebar{
+    height:calc(90vh - 120px) !important;
+    width: 300px;
+    border-color: black ;
+    border-width: 2px;
+    border-radius: 26px;
+}
+
+.groups{
+    width: 100%;
+    position: absolute;
+    top: 68px;
+    margin-left: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}

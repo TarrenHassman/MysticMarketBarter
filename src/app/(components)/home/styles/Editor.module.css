@@ -1,0 +1,7 @@
+.editor {
+    height: calc(90vh - 120px) !important;
+    width: 350px;
+    border-color: black;
+    border-radius: 26px;
+    border-width: 2px;
+}

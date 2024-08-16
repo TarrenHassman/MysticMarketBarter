@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Inter" sans-serif;
+}
+
+.sidebar{
+    width: 256px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(168, 113, 255);
+    padding: 24px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
