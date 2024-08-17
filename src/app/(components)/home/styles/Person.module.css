@@ -5,13 +5,22 @@
     border-width: 2px;
     border-radius: 12px;
     height: 75px;
-    width: 250px;
+    width: 280x;
     display: flex;
     flex-direction: row;
    justify-content: space-between;
    padding: 8px;
    align-items: center;
    background-color: wheat;
+}
+
+.donation{
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 30px;
+    padding: 3px;
+    z-index: 100;
+    pointer-events: all;
 }
 
 .avatar{

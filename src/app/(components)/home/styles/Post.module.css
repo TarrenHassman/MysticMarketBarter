@@ -1,5 +1,6 @@
 .post{
-    z-index: -2;
+    z-index: 3;
+    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,7 +12,7 @@
 }
 
 .person{
-    z-index: -1;
+    z-index: 3;
     position: absolute;
     bottom: -16px;
     left: -95px;

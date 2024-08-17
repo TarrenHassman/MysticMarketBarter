@@ -1,0 +1,17 @@
+
+
+.uploader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed purple;
+    height: calc(80vh - 120px) !important;
+    width: 300px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.fileInput {
+    margin: auto;
+}
