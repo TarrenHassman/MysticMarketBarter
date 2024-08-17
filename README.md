@@ -73,3 +73,10 @@ This could allow developers more granular control of database structures for the
 
 It also allows for better distinction between the "file system" (IPFS) and the database layer (Orbit/RxDb)
 
+
+
+If you would like to donate to the project you can to: 0x729A36e98445cd8C657bBB0f7F19Ef624864a0E3
+
+If you would like to join the project, please feel free to join using github:
+*Do note*
+*The project will be moved to a more accurately named github repo*
