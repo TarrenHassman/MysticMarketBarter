@@ -85,7 +85,7 @@ export default function Orbit() {
       });
 
       //Database creation
-      const db = await orbitManager.open("db.address");
+      const db = await orbitManager.open("db.address", {type: 'documents'});
       console.log(db.address);
       orbit.setState(() => {
         orbit.state.state.databases.push(db);

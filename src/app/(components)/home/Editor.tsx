@@ -25,29 +25,34 @@ export default function Editor() {
   //     },
   //   },
   // });
-  let aaaa = useStore(orbit, orbit=>orbit.state.databases)
+  let aaaa = useStore(orbit, (orbit) => orbit.state.databases);
   return (
     <div className={styles.editorSidebar}>
-    
-
-      <div
-      className={styles.editor}
-      >
+      <div className={styles.editor}>
         {/* <PostToggle></PostToggle>
       <EditorContent editor={editor} />
       <MenuBar editor={editor} /> */}
-      <Uploader></Uploader>
+        <Uploader></Uploader>
       </div>
-      
-      <button 
-      onClick={async ()=>{
-        await aaaa[0].add("entry")
-        await aaaa[0].add("entry")
-        console.log("Records:");
-      console.log(await aaaa[0].all());
-console.log(aaaa[0])
-      }}
-      className={styles.createButton}>Share Post</button>
+
+      <button
+        onClick={async () => {
+          await aaaa[0].put({ _id: 'fileName', doc: {
+            type:"image",
+            fileData:{
+              extension:"",
+              ipfsLink:""
+            }
+          } });
+          // await aaaa[0].put("doc2", { hello: "world 2", hits: 2 });
+          console.log("Records:");
+          console.log(await aaaa[0].all());
+          console.log(aaaa[0]);
+        }}
+        className={styles.createButton}
+      >
+        Share Post
+      </button>
       {/* <button className={styles.shareButton}>Share</button> */}
     </div>
   );
