@@ -97,14 +97,18 @@ export default function Orbit() {
           },
         };
       });
+
+      // Adding records displayed in Editor.tsx through tanstack store use
+
       // setAddress(db.address);
       // Add some records to the db.
-      await db.add("hello world 1");
-      await db.add("hello world 2");
+      // await db.add("hello world 1");
+      // await db.add("hello world 2");
+      // await orbit.state.state.databases[0].add("entry")
 
       // Print out the above records.
-      console.log("Records:");
-      console.log(await db.all());
+      // console.log("Records:");
+      // console.log(await db.all());
     //   process.on('SIGINT', async () => {
     //     // print the final state of the db.
     //     console.log((await db.all()).map(e => e.value))

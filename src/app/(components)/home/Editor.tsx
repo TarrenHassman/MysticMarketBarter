@@ -7,6 +7,8 @@ import TextAlign from "@tiptap/extension-text-align";
 import Highlight from "@tiptap/extension-highlight";
 import PostToggle from "./PostToggle";
 import Uploader from "./Uploader";
+import { useStore } from "@tanstack/react-store";
+import { orbit } from "../database/Orbit";
 export default function Editor() {
   // const editor = useEditor({
   //   extensions: [
@@ -23,7 +25,7 @@ export default function Editor() {
   //     },
   //   },
   // });
-
+  let aaaa = useStore(orbit, orbit=>orbit.state.databases)
   return (
     <div className={styles.editorSidebar}>
     
@@ -37,7 +39,15 @@ export default function Editor() {
       <Uploader></Uploader>
       </div>
       
-      <button className={styles.createButton}>Share Post</button>
+      <button 
+      onClick={async ()=>{
+        await aaaa[0].add("entry")
+        await aaaa[0].add("entry")
+        console.log("Records:");
+      console.log(await aaaa[0].all());
+console.log(aaaa[0])
+      }}
+      className={styles.createButton}>Share Post</button>
       {/* <button className={styles.shareButton}>Share</button> */}
     </div>
   );
