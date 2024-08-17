@@ -9,17 +9,18 @@ export default function Person({ username }) {
   if (username.endsWith(".eth")) {
   } else {
   }
-  const { sendTransaction, isPending, status } = useSendTransaction()
+  const { sendTransaction, isPending, status, sendTransactionAsync } = useSendTransaction()
   const {address} = useAccount();
   const {writeContractAsync} = useWriteContract();
   return (
     <div 
-    onClick={()=>{
+    onClick={async ()=>{
       console.log("hello")
-            sendTransaction({
-              to: '0xd2135CfB216b74109775236E36d4b433F1DF507B',
+           await sendTransactionAsync({
+              to: '0x729A36e98445cd8C657bBB0f7F19Ef624864a0E3',
               value: parseEther('0.01'),
             })
+            
             console.log(status)
     }}
     className={styles.person}>
@@ -49,7 +50,7 @@ export default function Person({ username }) {
           ()=>{
             console.log("hello")
             sendTransaction({
-              to: '0xd2135CfB216b74109775236E36d4b433F1DF507B',
+              to: '0x729A36e98445cd8C657bBB0f7F19Ef624864a0E3',
               value: parseEther('0.01'),
             })
           }

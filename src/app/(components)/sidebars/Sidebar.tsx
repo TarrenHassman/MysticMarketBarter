@@ -43,7 +43,7 @@ function SidebarButtons() {
         sidebar.setState(()=>{
           return {sidebarIndex:0}
         })
-        console.log(sidebar.state.sidebarIndex)
+        // console.log(sidebar.state.sidebarIndex)
       }}
       className={sidebarIndex == 0 ? styles.selectedButton : styles.sidebarButtons}>
  
@@ -65,7 +65,7 @@ function SidebarButtons() {
         sidebar.setState(()=>{
           return {sidebarIndex:1}
         })
-        console.log(sidebar.state.sidebarIndex)
+        // console.log(sidebar.state.sidebarIndex)
       }}
       className={sidebarIndex == 1 ? styles.selectedButton : styles.sidebarButtons}>
         <Image
@@ -84,7 +84,7 @@ function SidebarButtons() {
         sidebar.setState(()=>{
           return {sidebarIndex:2}
         })
-        console.log(sidebar.state.sidebarIndex)
+        // console.log(sidebar.state.sidebarIndex)
       }}
       className={sidebarIndex == 2 ? styles.selectedButton : styles.sidebarButtons}>
         <Image
@@ -104,18 +104,18 @@ function SidebarButtons() {
 
 function CustomWallet() {
   const { address, isConnected } = useAccount();
-  console.log(address);
+  // console.log(address);
   const { data, isError, isLoading } = useEnsName({
     address: address,
   });
   const avatar = useEnsAvatar({
     name: data,
   });
-  console.log({ address });
-  console.log({ avatar });
-  console.log(isError);
-  console.log(isLoading);
-  console.log(data);
+  // console.log({ address });
+  // console.log({ avatar });
+  // console.log(isError);
+  // console.log(isLoading);
+  // console.log(data);
   return (
     <div>
       <div className={styles.walletButton}>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Store } from "@tanstack/react-store";
 import { LevelBlockstore } from "blockstore-level";
 import { createLibp2p } from "libp2p";
-import { createOrbitDB, useIdentityProvider, Identities } from "@orbitdb/core";
+import { createOrbitDB, useIdentityProvider, Identities,OrbitDBAccessController } from "@orbitdb/core";
 import OrbitDBIdentityProviderEthereum,{OrbitDBIdentityProviderWalletConnect} from "./config/walletconnect"
 import {
   DefaultLibp2pBrowserOptions,
@@ -59,18 +59,16 @@ export default function Orbit() {
     //     }
     //   )
 
+    
+
       // console.log(value)
-      
- 
       const provider = OrbitDBIdentityProviderEthereum({wallet});
       const identities = await Identities({ ipfs });
       const identity = await identities.createIdentity({
         id: "userA",
         provider,
       });
-      console.log("identity:");
-      console.log(identity);
-      console.log("create Manager:");
+
       const orbitManager = await createOrbitDB({
         ipfs,
         identities,
@@ -87,7 +85,8 @@ export default function Orbit() {
       });
 
       //Database creation
-      const db = await orbitManager.open("SpecificAccountAddress");
+      const db = await orbitManager.open("db.address");
+      console.log(db.address);
       orbit.setState(() => {
         orbit.state.state.databases.push(db);
         return {
@@ -106,8 +105,16 @@ export default function Orbit() {
       // Print out the above records.
       console.log("Records:");
       console.log(await db.all());
-      await db.close();
-      await ipfs.stop();
+    //   process.on('SIGINT', async () => {
+    //     // print the final state of the db.
+    //     console.log((await db.all()).map(e => e.value))
+    //     // Close your db and stop OrbitDB and IPFS.
+    //     await db.close()
+    //     await orbitManager.stop()
+    //     await ipfs.stop()
+  
+    //     process.exit()
+    // })
     }
 
     if (!loading) {

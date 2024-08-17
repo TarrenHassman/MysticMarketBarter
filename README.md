@@ -38,6 +38,30 @@ The majority of users will never setup an IPFS/Filecoin node on their desktop. W
 
 OrbitDb focuses on a local first approach, meaning you store your NFT data by default and don't constantly attempt to retreive it from the network.
 
+
+# Roadmap
+
+# Mobile First Plans
+
+A mobile first platform should be a focus for a social media.
+
+The following rebuild will most likely be done with React Native. I have the begginings of integrating OrbitDb already in the works.
+
+# Rich Text Editor
+The platform will incorporate a rich text editor for dynamic posts to bring back the era of customizable social media ala Myspace.
+
+# NFT integration
+Integrate viewing NFTs as well as integrating them into posts and enforcing ownership to do so
+
+# Custom Access Controller
+Allow access to a database based on NFT ownership by signing wallet
+
+# Chainlink Relay
+Build a relay server using Chainlink
+
+# Web3 inbox integration
+Display web3 notifications
+
 # Possible Alternatives
 
 These are possible alternatives to be used in the next rewrite as I learn from the previous versions.
@@ -48,13 +72,4 @@ This is an alternative database sdk which allows webRTC p2p systems
 This could allow developers more granular control of database structures for their applications
 
 It also allows for better distinction between the "file system" (IPFS) and the database layer (Orbit/RxDb)
-
-# Mobile First Plans
-
-A mobile first platform should be a focus for a social media.
-
-The following rebuild will most likely be done with React Native. I have the beginngs of integrating OrbitDb already in the works.
-
-
-# Credits / Attributions / Tutorials
 
