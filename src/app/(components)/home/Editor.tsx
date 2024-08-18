@@ -36,7 +36,7 @@ export default function EditorContainer() {
           let b = await aaaa[0].all();
           let index = b.length - 1;
           await aaaa[0].put({
-            _id: b,
+            _id: b.length,
             doc: {
               type: "text",
               value: content,

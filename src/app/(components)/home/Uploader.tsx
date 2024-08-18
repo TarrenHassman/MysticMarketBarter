@@ -17,7 +17,7 @@ export default function Uploader() {
         onClick={() => document.getElementById("file").click()}
       >
         <input
-        // disabled = {true}
+          // disabled = {true}
           className={styles.fileInput}
           id="file"
           type="file"
@@ -28,23 +28,42 @@ export default function Uploader() {
           onChange={async ({ target: { files } }) => {
             if (files.item(0).type.endsWith("text/html")) {
               console.log("cooking with gas");
+
+              let a = db[0].length;
+              let c = await db[0].all();
+              let index = c.length;
+
+              console.log(index)
+
+              console.log(await files.item(0).text());
+              let html = await files.item(0).text()
+
+              console.log(index)
+              console.log()
+              await db[0].put({
+                _id: index,
+                doc: {
+                  type: "text",
+                  value: html,
+                },
+              });
+              
             }
             if (files.item(0).type.endsWith("solidity")) {
-              console.log("UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE");
+              console.log(
+                "UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE"
+              );
             }
-            console.log(files.item(0).arrayBuffer)
-            // await db[0].put({
-            //   _id: "fileName",
-            //   file: files[0] as File,
-            // });
+            // console.log(await files.item(0).text());
+
             const filereader = new FileReader();
             filereader.onload = () => {
-              setImage(filereader.result)
+              setImage(filereader.result);
             };
-           
-              filereader.readAsDataURL(files[0]);
-            
-            setFileName("test")
+
+            filereader.readAsDataURL(files[0]);
+
+            setFileName("test");
             // let a = await db[0].all()
             // console.log(a[0].value);
             // let f: File = a[0].value.file
