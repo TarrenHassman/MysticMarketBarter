@@ -32,14 +32,13 @@ export default function Post() {
         const filereader = new FileReader();
       filereader.onload = () => {};
       for await (const record of db[0].iterator()) {
-        console.log(record.value.file.typeof);
         console.log(record.value.file.file);
-        let r = record.value.file.file as Blob
+        let r = record.value.file.file as File
         filereader.readAsDataURL(r);
       }
       }}
       >
-Refresh! Good for First Image!
+Refresh! Good for First Image! ...Or Maybe Not
       </button>
 
       {db.length}
