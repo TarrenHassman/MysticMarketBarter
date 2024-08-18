@@ -6,7 +6,7 @@ import image from "../../../../public/example/applebaklava.jpg";
 import { orbit } from "../database/Orbit";
 import { useStore } from "@tanstack/react-store";
 import { useAccount, useEnsName } from "wagmi";
-
+import parse from "html-react-parser";
 export default function Post() {
   let db = useStore(orbit, (orbit) => orbit.state.databases);
   const [file, setFile] = useState<File | undefined>(undefined);
@@ -17,8 +17,10 @@ export default function Post() {
   });
   const fetchPost = async () => {
     let b = await db[0].all()
-    console.log( b[0].value.doc.value)
-   setPost( b[0].value.doc.value)
+    let index = b.length -1
+    console.log(index)
+    console.log( b[index].value.doc.value)
+   setPost( b[index].value.doc.value)
     // const filereader = new FileReader();
     // filereader.onload = () => {};
     // for await (const record of db[0].iterator()) {
@@ -35,7 +37,7 @@ export default function Post() {
       console.log(db[0]);
     }
   }, []);
-  console.log(db.length != 0 ? db[0].all() : "nothing here");
+  
   return (
     <div className={styles.post}>
       <button
@@ -44,14 +46,24 @@ export default function Post() {
          fetchPost()
         }}
       >
-        Refresh! Works for the first post :{")"}
+        Refresh! Loads only most recent...
       </button>
-      {db.length != 0 ? db[0].length != 0 ? post : "" : ""}
-      <div>
-        <Image alt="Image" height={200} width={400} src={image}></Image>
+      {/* Simple Text Post integration */}
+      <div
+      className={styles.text}
+      >
+        
+        {db.length != 0 ? db[0].length != 0 ? <div className={styles.parsedhtml}>{parse(`${post}`)}</div> : "" : ""}
       </div>
+      {/* Support HTML */}
+        {
+          post != "" ? db.length != 0 ? db[0].length != 0 ? "" : "" : "" : <div>
+          <Image alt="Image" height={200} width={400} src={image}></Image>
+        </div>
+        }
+      
       <div className={styles.person}>
-        <Person username={address ?? "aj;lskdf"} buttonType={""}></Person>
+        <Person username={address ?? post == "" ? "matoaka.eth" : "Login"} buttonType={""}></Person>
       </div>
     </div>
   );

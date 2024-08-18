@@ -8,6 +8,7 @@ The OrbitDb features are currently local network only
 
 In order to use it:
 Clone the repo
+npm install
 npm run dev
 
 Enjoy!

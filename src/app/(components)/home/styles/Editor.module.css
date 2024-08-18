@@ -20,7 +20,7 @@
 }
 
 .richText{
-    height: calc(40vh - 300px) !important;
+    height: calc(60vh - 120px) !important;
     width: 320px;
     margin-top: 5px;
     margin-left: auto;
@@ -53,4 +53,12 @@
     position: absolute;
     bottom: -5vh;
     left: 158px;
+}
+
+.novel{
+    height: 98%;
+    width: 98%;
+    border: 2px dashed black;
+    border-radius: 25px;
+    margin: 2px;
 }

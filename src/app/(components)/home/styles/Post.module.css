@@ -6,9 +6,16 @@
     align-items: center;
     position: relative;
     width: calc(95vw - 350px) !important;
+    padding: auto;
     height: 98vh;
     border-color: black;
     border-width: 2px;
+}
+
+.text{
+    display: inline;
+    inline-size: calc(95vw - 375px) !important;;
+    overflow-wrap: break-word;
 }
 
 .person{
@@ -19,9 +26,83 @@
 }
 
 .refresh{
+    margin-bottom: 10px;
     color: white;
     background-color: purple;
     border-color: black;
     border-width: 2px;
     border-radius: 5px;
 }
+
+.parsedhtml h1 {
+    @apply text-2xl font-bold my-4;
+  }
+   
+  .parsedhtml h2 {
+    @apply text-xl font-bold my-4;
+  }
+   
+  .parsedhtml h3 {
+    @apply text-lg font-bold my-4;
+  }
+   
+  .parsedhtml h4 {
+    @apply text-base font-bold my-4;
+  }
+   
+  .parsedhtml p {
+    @apply text-base leading-relaxed my-2;
+  }
+   
+  .parsedhtml img {
+    @apply max-w-full h-auto my-4 block;
+  }
+   
+  .parsedhtml code {
+    @apply bg-gray-100 px-2 py-1 rounded font-mono;
+  }
+   
+  .parsedhtml ul {
+    @apply list-disc my-4 pl-8;
+  }
+   
+  .parsedhtml ul li {
+    @apply my-2;
+  }
+   
+  .parsedhtml ol {
+    @apply list-decimal my-4 pl-8;
+  }
+   
+  .parsedhtml ol li {
+    @apply my-2;
+  }
+   
+  .parsedhtml blockquote {
+    @apply border-l-4 border-gray-300 pl-4 my-4 text-gray-600 italic;
+  }
+   
+  .parsedhtml pre {
+    @apply bg-gray-100 p-4 rounded overflow-x-auto font-mono;
+  }
+   
+  .parsedhtml a {
+    @apply text-blue-600 no-underline hover:underline;
+  }
+   
+  .parsedhtml table {
+    @apply border-collapse w-full my-4;
+  }
+   
+  .parsedhtml th,
+  .parsedhtml td {
+    @apply border border-gray-300 px-2 py-1 text-left;
+  }
+   
+  .parsedhtml th {
+    @apply bg-gray-100 font-bold;
+  }
+   
+  /* .novel-list-disc {
+    list-style: circle;
+  } */

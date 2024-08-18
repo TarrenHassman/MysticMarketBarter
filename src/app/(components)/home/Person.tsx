@@ -29,7 +29,7 @@ export default function Person({ username, buttonType }) {
     console.log("Connnect Users");
   };
   const sendAppreciation = async () => {
-    console.log(data)
+    console.log(data);
     if (username == "matoaka.eth") {
       await sendTransactionAsync({
         to: "0x729A36e98445cd8C657bBB0f7F19Ef624864a0E3",
@@ -51,18 +51,18 @@ export default function Person({ username, buttonType }) {
       className={styles.person}
     >
       <div>
-    {avatar.isLoading || avatar.data == undefined ? (
-      <img alt="Avatar" src="favicon.ico" className={styles.avatar} />
-    ) : (
-      <Image
-        height={70}
-        width={70}
-        alt="Avatar"
-        src={avatar.data}
-        className={styles.avatar}
-      />
-    )}
-  </div>
+        {avatar.isLoading || avatar.data == undefined ? (
+          <img alt="Avatar" src="favicon.ico" className={styles.avatar} />
+        ) : (
+          <Image
+            height={70}
+            width={70}
+            alt="Avatar"
+            src={avatar.data}
+            className={styles.avatar}
+          />
+        )}
+      </div>
       <div
         style={{
           display: "flex",
@@ -73,23 +73,23 @@ export default function Person({ username, buttonType }) {
           alignItems: "center",
         }}
       >
-   
-        { username == "matoaka.eth" ?
-          <h1 className={styles.ensName}>matoaka.eth</h1>:
+        {username == "matoaka.eth" ? (
+          <h1 className={styles.ensName}>matoaka.eth</h1>
+        ) : (
           <h1 className={styles.ensName}>{isLoading ? "Loading..." : data}</h1>
-        }
-
-        {
-          data == undefined && address !=undefined ? address.substring(0,17)+"..." : ""
-        }
+        )}
+        {username != "matoaka.eth"
+          ? data == undefined && address != undefined
+            ? address.substring(0, 17) + "..."
+            : "Login"
+          : ""}
 
         {isError}
-        
+
         <button
           className={styles.donation}
           onClick={buttonType == "connect" ? connectUsers : sendAppreciation}
         >
-   
           {buttonType == "connect" ? "Connect" : "Send your Appreciation!"}
         </button>
       </div>
@@ -97,10 +97,9 @@ export default function Person({ username, buttonType }) {
   );
 }
 
-
 // <div>
 // <div className={styles.walletButton}>
-  
+
 //   <div>
 //     {!isConnected || address == undefined ? (
 //       <w3m-button></w3m-button>

@@ -1,31 +1,14 @@
 import React, { useState } from "react";
 import styles from "./styles/Editor.module.css";
-import { useEditor, EditorContent } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import { MenuBar } from "./EditorMenu";
-import TextAlign from "@tiptap/extension-text-align";
-import Highlight from "@tiptap/extension-highlight";
 import PostToggle from "./PostToggle";
 import Uploader from "./Uploader";
 import { useStore } from "@tanstack/react-store";
 import { orbit } from "../database/Orbit";
-export default function Editor() {
+import NovelEditor from "./RichText";
+export default function EditorContainer() {
   const [value, setValue] = useState("");
-  // const editor = useEditor({
-  //   extensions: [
-  //     StarterKit.configure(),
-  //     TextAlign.configure({
-  //       types: ["heading", "paragraph"],
-  //     }),
-  //     Highlight,
-  //   ],
-  //   content: "<p>Hello World! 🌎️</p>",
-  //   editorProps: {
-  //     attributes: {
-  //       class: styles.richText,
-  //     },
-  //   },
-  // });
+  const [content, setContent] = useState("");
+
   let aaaa = useStore(orbit, (orbit) => orbit.state.databases);
   return (
     <div className={styles.editorSidebar}>
@@ -33,41 +16,35 @@ export default function Editor() {
         {/* <PostToggle></PostToggle> */}
         {/* <EditorContent editor={editor} /> */}
         {/* <MenuBar editor={editor} /> */}
-        <input
+        <div className={styles.novel}>
+          <NovelEditor setContent={setContent} />
+        </div>
+
+        {/* <textarea
           className={styles.richText}
-          type="text"
           onChange={(a) => {
-          
             setValue(a.target.value);
           }}
-          
-        ></input>
+        ></textarea> */}
+
         <Uploader></Uploader>
       </div>
 
       <button
-       onClick={async () => {
-        let a = aaaa[0].length;
-        await aaaa[0].put({
-          _id: "name",
-          doc: {
-            type: "text",
-            value: value,
-          },
-        });
-        await aaaa[0].put({
-          _id: "name1",
-          doc: {
-            type: "text",
-            value: value,
-          },
-        });
-        // await aaaa[0].put("doc2", { hello: "world 2", hits: 2 });
-        console.log("Records:");
-    
-        let b = await aaaa[0].all()
-        console.log(b[0].value.doc.value);
-      }}
+        onClick={async () => {
+          let a = aaaa[0].length;
+          let b = await aaaa[0].all();
+          let index = b.length - 1;
+          await aaaa[0].put({
+            _id: b,
+            doc: {
+              type: "text",
+              value: content,
+            },
+          });
+          console.log("Records:");
+          console.log(b[0].value.doc.value);
+        }}
         className={styles.createButton}
       >
         Share Post
