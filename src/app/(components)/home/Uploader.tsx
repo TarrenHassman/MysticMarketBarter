@@ -28,11 +28,13 @@ export default function Uploader() {
             if (files.item(0).type.endsWith("text/html")) {
               console.log("cooking with gas");
             }
-    
+            if (files.item(0).type.endsWith("solidity")) {
+              console.log("UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE UNICODE_FIRE_EMOJI_CODE");
+            }
             console.log(files.item(0).arrayBuffer)
             await db[0].put({
               _id: "fileName",
-              file: files[0],
+              file: files[0] as File,
             });
             const filereader = new FileReader();
             filereader.onload = () => {
@@ -42,7 +44,10 @@ export default function Uploader() {
               filereader.readAsDataURL(files[0]);
             
             setFileName("test")
-            console.log(await db[0].iterator().next().value);
+            let a = await db[0].all()
+            console.log(a[0].value);
+            let f: File = a[0].value.file
+            console.log(f);
           }}
           hidden
         />

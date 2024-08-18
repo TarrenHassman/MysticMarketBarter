@@ -45,7 +45,7 @@ OrbitDb focuses on a local first approach, meaning you store your NFT data by de
 
 A mobile first platform should be a focus for a social media.
 
-The following rebuild will most likely be done with React Native. I have the begginings of integrating OrbitDb already in the works.
+The following rebuild will either be built in React Native or Flutter. I have an initial binary of orbitDB compiled for React Native, and the start of a performant website builder with visual coding built in Flutter.
 
 You can see more about the vision of the project at where a flutter demo of a website builder is hosted with information about the goals:
 https://thirdspace-ae19e.web.app/
