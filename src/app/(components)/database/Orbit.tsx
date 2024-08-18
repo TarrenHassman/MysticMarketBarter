@@ -98,6 +98,15 @@ export default function Orbit() {
         };
       });
 
+      await db.put({
+        _id: "matoakaPost",
+        doc: {
+          type: "text",
+          value: `<p 
+          style= "color: blue">Hello<p>`,
+        },
+      });
+
       // Adding records displayed in Editor.tsx through tanstack store use
 
       // setAddress(db.address);
