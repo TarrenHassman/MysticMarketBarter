@@ -9,6 +9,8 @@ import chatting from "../../../../public/chatting.png";
 import GroupSidebar from "./GroupSidebar";
 import {sidebar} from './hooks/use-sidebar'
 import { useStore } from "@tanstack/react-store";
+import CustomWallet from "../walletConnect/customwallet";
+import Person from "../home/Person";
 
 export default function Sidebar() {
   return (
@@ -26,6 +28,16 @@ export default function Sidebar() {
     >
       <CustomWallet></CustomWallet>
       <SidebarButtons></SidebarButtons>
+     <div
+     className={styles.donation}
+     >
+     <Person
+        username={"matoaka.eth"}
+        buttonType={""}
+        >
+
+        </Person>
+     </div>
     </motion.div>
   );
 }
@@ -98,49 +110,7 @@ function SidebarButtons() {
             className={styles.sidebarLabels}
           >Messages</h1>
       </li>
+    
     </ul>
-  );
-}
-
-function CustomWallet() {
-  const { address, isConnected } = useAccount();
-  // console.log(address);
-  const { data, isError, isLoading } = useEnsName({
-    address: address,
-  });
-  const avatar = useEnsAvatar({
-    name: data,
-  });
-  // console.log({ address });
-  // console.log({ avatar });
-  // console.log(isError);
-  // console.log(isLoading);
-  // console.log(data);
-  return (
-    <div>
-      <div className={styles.walletButton}>
-        <div>
-          {avatar.isLoading || avatar.data == undefined ? (
-            <img alt="Avatar" src="favicon.ico" className={styles.avatar} />
-          ) : (
-            <Image
-              height={70}
-              width={70}
-              alt="Avatar"
-              src={avatar.data}
-              className={styles.avatar}
-            />
-          )}
-        </div>
-        <div>
-          {!isConnected || address == undefined ? (
-            <w3m-button></w3m-button>
-          ) : (
-            <w3m-account-button />
-          )}
-          <h1 className={styles.ensName}>{isLoading ? "Loading..." : data}</h1>
-        </div>
-      </div>
-    </div>
   );
 }

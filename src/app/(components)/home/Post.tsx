@@ -5,11 +5,16 @@ import Image from "next/image";
 import image from "../../../../public/example/applebaklava.jpg";
 import { orbit } from "../database/Orbit";
 import { useStore } from "@tanstack/react-store";
+import { useAccount, useEnsName } from "wagmi";
 
 export default function Post() {
   let db = useStore(orbit, (orbit) => orbit.state.databases);
   const [file, setFile] = useState<File | undefined>(undefined);
   const [post, setPost] = useState("")
+  const { address, isConnected } = useAccount();
+  const { data, isError, isLoading } = useEnsName({
+    address: address,
+  });
   const fetchPost = async () => {
     let b = await db[0].all()
     console.log( b[0].value.doc.value)
@@ -46,7 +51,7 @@ export default function Post() {
         <Image alt="Image" height={200} width={400} src={image}></Image>
       </div>
       <div className={styles.person}>
-        <Person username={"matoaka.eth"} buttonType={""}></Person>
+        <Person username={address ?? "aj;lskdf"} buttonType={""}></Person>
       </div>
     </div>
   );
