@@ -37,6 +37,7 @@ export default function Editor() {
 
       <button
         onClick={async () => {
+          
           await aaaa[0].put({ _id: 'fileName', doc: {
             type:"image",
             fileData:{

@@ -30,7 +30,8 @@ export default function Search() {
       width={32}
       ></Image>
       <Person
-      username={"hello"}
+      username={"matoaka.eth"}
+      buttonType={"connect"}
       ></Person>
     </motion.div>
   );

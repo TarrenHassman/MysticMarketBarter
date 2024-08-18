@@ -47,6 +47,10 @@ A mobile first platform should be a focus for a social media.
 
 The following rebuild will most likely be done with React Native. I have the begginings of integrating OrbitDb already in the works.
 
+You can see more about the vision of the project at where a flutter demo of a website builder is hosted with information about the goals:
+https://thirdspace-ae19e.web.app/
+
+
 # Rich Text Editor
 The platform will incorporate a rich text editor for dynamic posts to bring back the era of customizable social media ala Myspace.
 

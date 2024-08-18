@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/app/(components)/home/Uploader.js"  ],
+, "src/app/(components)/home/Uploader.tsx"  ],
   "exclude": [
     "node_modules"
   ]
